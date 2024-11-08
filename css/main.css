@@ -1,53 +1,71 @@
-html, body {
+html,
+body {
     height: 100%;
+    width: 100%;
     margin: 0;
     display: flex;
     flex-direction: column;
 }
-h1{
+
+h1 {
     background-color: white;
-    color:var(--title-color);
+    color: var(--title-color);
     text-align: center;
     padding: 5%;
     background-color: var(--title-back-color);
-    padding: 40px auto;
+    padding: 20px auto;
+    font-size: large;
 }
-body{
-    background-color:var(--body-back-color);
+
+body {
+    background-color: var(--body-back-color);
 }
-.maintitle{
+
+.maintitle {
     background-color: var(--title-back-color);
 }
-.maintitle img{
+
+.maintitle img {
     justify-self: center;
-    width: 50%;
     display: block;
     justify-content: center;
     justify-items: center;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    height:8em;
 }
+
+
 /* default light */
-:root{
+:root {
     --body-back-color: #c1e8ff;
-    --each-box-color:white;
+    --each-box-color: white;
     --title-color: #021024;
-    --title-back-color:white;
+    --title-back-color: white;
+    --icon: black;
 }
+
 .meet-grid {
     display: flex;
     flex-wrap: wrap;
-    
     justify-content: center;
     margin: 20px auto;
-    max-width: 100%; /* Ensures the grid does not exceed the container width */
+    max-width: 100%;
+    /* Ensures the grid does not exceed the container width */
 }
 
 .meet-container {
-    flex: 1 1 30%; /* Adjusts the width to 30% of the parent container */
-    max-width: 30%; /* Ensures the box does not exceed 30% width */
-    min-width: 250px; /* Minimum width before wrapping */
-    margin-bottom: 5px; /* Smaller margin by default */
+    flex: 1 1 30%;
+    /* Adjusts the width to 30% of the parent container */
+    max-width: 30%;
+    /* Ensures the box does not exceed 30% width */
+    min-width: 250px;
+    /* Minimum width before wrapping */
+    margin-bottom: 5px;
+    /* Smaller margin by default */
     box-sizing: border-box;
-    transition: margin 0.3s ease; /* Smooth transition for margin */
+    transition: margin 0.3s ease;
+    /* Smooth transition for margin */
     justify-items: center;
 }
 
@@ -56,7 +74,8 @@ body{
     cursor: pointer;
     margin: 10px;
     border: 1px solid #ddd;
-    width: 200px; /* Full width of the .meet-container */
+    width: 200px;
+    /* Full width of the .meet-container */
     height: 200px;
     text-align: center;
     justify-items: center;
@@ -65,18 +84,21 @@ body{
     transition: background-color 0.3s;
     border-radius: 50px;
 }
-.collapsible img { 
+
+.collapsible img {
     width: 60%;
     padding-top: 0px;
     border-radius: 50px;
     justify-self: center;
 }
-.collapsible p{
+
+.collapsible p {
     padding-top: 25px;
     padding-bottom: 0;
-    color:var(--box-text-color);
+    color: var(--box-text-color);
     justify-content: center;
 }
+
 .collapsible:hover {
     background-color: #ddd;
 }
@@ -88,18 +110,19 @@ body{
     margin: 0;
     list-style-type: none;
 }
+
 .content li {
-    width: 200px; /* Full width of the .meet-container */
-    height:auto;
+    width: 200px;
+    /* Full width of the .meet-container */
+    height: auto;
     padding: 15px 5px;
     background-color: #ffffff;
-    border-radius:0;
+    border-radius: 0;
     border: 1px solid #ddd;
     margin-bottom: 0;
     text-align: center;
     transition: background-color 0.3s, transform 0.2s, ease-in-out;
-   
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Hover effect for list items */
@@ -110,32 +133,37 @@ body{
 
 /* Styling for the anchor links */
 .content li a {
-    text-decoration:wavy;
+    text-decoration: wavy;
     color: #052659;
     font-size: 16px;
 }
-.content li:nth-child(odd) a{
+
+.content li:nth-child(odd) a {
     color: white;
 }
-.content li:nth-child(odd){
+
+.content li:nth-child(odd) {
     background-color: #375A86;
-    color:white;
+    color: white;
 }
 
 .content li a:hover {
     text-decoration: underline;
     color: #5483b3;
 }
-.content li:nth-child(odd) a:hover{
+
+.content li:nth-child(odd) a:hover {
     color: #c1e8ff;
 }
-footer{
+
+footer {
     background-color: black;
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: auto; 
+    margin-top: auto;
 }
+
 .menu-icon {
     font-size: 30px;
     cursor: pointer;
@@ -143,26 +171,30 @@ footer{
     top: 10px;
     left: 10px;
     z-index: 1000;
+    color: var(--icon);
 }
 
 /* Navigation styling */
 nav {
     position: fixed;
     top: 0;
-    left: -250px; /* Initially hidden to the left */
+    left: -250px;
+    /* Initially hidden to the left */
     width: 250px;
     height: 100%;
     background-color: #333;
     overflow-x: hidden;
     transition: left 0.3s;
-    z-index: 999; /* Ensures it overlays the content */
+    z-index: 999;
+    /* Ensures it overlays the content */
 }
 
 nav ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
-    padding-top: 60px; /* Space for the menu icon */
+    padding-top: 60px;
+    /* Space for the menu icon */
 }
 
 nav li {
@@ -182,24 +214,90 @@ nav li a:hover {
 
 /* Active state for showing the nav */
 nav.active {
-    left: 0; /* Moves the nav in from the left */
+    left: 0;
+    /* Moves the nav in from the left */
 }
-footer a{
+
+footer a {
     color: white !important;
 }
-/* Expanded state for mobile version */
-@media (min-width: 768px) {
+@media screen {
+    nav ul{
+        flex-direction: column;
+    }
+    
+}
+/* Expanded state for laptop version */
+@media screen and (min-width: 1024px) {
+    .maintitle {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .maintitle img {
+        height: 7.25em;
+        width: auto;
+        padding-top:0.5rem;
+        padding-right: 1rem;
+
+    }
+
+    header {
+        padding: 0;
+    }
+
+    body {
+        padding: 0;
+    }
+
+    nav {
+        position: sticky;
+        top: 0;
+        left: 0;
+        /* Visible by default */
+        width: 100%;
+        /* Full width for top nav */
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: #333;
+        transition: none;
+        /* Remove sliding animation */
+    }
+
+    nav ul {
+        flex-direction: row;
+        padding: 0;
+        padding-top: 0;
+        /* Reset padding for the wider version */
+    }
+
+    nav li {
+        padding: 5px 2.5px;
+    }
+    nav li a{
+        font-size:small;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+
     
 }
 
-   
 
-@media (prefers-color-scheme:dark){
-    :root{
-    --body-back-color:#052659;
-    --each-box-color:#C1e8ff; 
-    --box-text-color:#021024;
-    --title-back-color:#021024 ;
-    --title-color:white;
+
+@media (prefers-color-scheme:dark) {
+    :root {
+        --body-back-color: #052659;
+        --each-box-color: #C1e8ff;
+        --box-text-color: #021024;
+        --title-back-color: #021024;
+        --title-color: white;
+        --icon: white;
     }
 }
